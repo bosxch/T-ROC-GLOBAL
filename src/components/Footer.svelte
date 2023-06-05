@@ -2,7 +2,6 @@
     <h2>
         Svelte app made by Bosch
     </h2>
-    <a href="/">Logo</a>
 </div>
 
 <style>
