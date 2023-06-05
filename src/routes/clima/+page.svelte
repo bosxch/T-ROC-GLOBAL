@@ -7,7 +7,7 @@
 
     
     let weather = writable({});
-    let city = ''
+    let city 
 
 
     const  onLocalStorage = async () => {
@@ -28,7 +28,6 @@ onMount(async () => {
 
 const handleSubmit = async (city) => {
  weather = await getWeatherFrom(city)
- city = ''
  if(weather.message) {
     alert('Ups... That place isn´t in the Weather API, try another!')
     weather = await getWeatherFrom()
