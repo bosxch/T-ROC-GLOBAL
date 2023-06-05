@@ -28,6 +28,7 @@ onMount(async () => {
 
 const handleSubmit = async (city) => {
  weather = await getWeatherFrom(city)
+ city = ''
  if(weather.message) {
     alert('Ups... That place isn´t in the Weather API, try another!')
     weather = await getWeatherFrom()
@@ -51,9 +52,6 @@ const handleSubmit = async (city) => {
         <button on:click={handleSubmit(city)} type="submit">Search</button>
     </form>
     {#if weather.locationName}
-    {#if error}
-        <h3 color='red'>{error}</h3>
-    {/if}
 <div class="time_state">
       <div class="cont_tyt">
         <h1 class="location_name">{weather.locationName}</h1>
