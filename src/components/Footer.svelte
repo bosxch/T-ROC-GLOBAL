@@ -1,6 +1,6 @@
 <div class="footer_container">
     <h2>
-        Svelte app made by Cardoso Bosch
+        Svelte app made by Bosch
     </h2>
     <a href="/">Logo</a>
 </div>
