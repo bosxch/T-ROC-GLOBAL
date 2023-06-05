@@ -18,7 +18,11 @@
     }
 
 onMount(async () => {
-   await onLocalStorage()
+    await onLocalStorage()
+    const interval = setInterval(await onLocalStorage(), 60000);
+    return () => {
+    clearInterval(interval);
+    }
 })
 
 

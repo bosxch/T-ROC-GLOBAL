@@ -1,14 +1,9 @@
 <script>
     import { onMount } from 'svelte';
     import { getGenres } from '../services/game_genres.js';
-    import { getFifaRank } from '../services/fifa_ranking.js';
-
-  let loading = false
   
     onMount( async () => {
       const genresData = await getGenres();
-      const getCarbobo = await getFifaRank()
-      console.log(getCarbobo)
       import('echarts').then(echarts => {
         let chartDom_pie = document.getElementById('main_pie');
         let myChart_pie = echarts.init(chartDom_pie);
@@ -54,7 +49,6 @@
         };
   
         option_pie && myChart_pie.setOption(option_pie);
-        loading = true
       });
     });
 
