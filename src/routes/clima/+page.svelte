@@ -8,7 +8,6 @@
     
     let weather = writable({});
     let city = ''
-    let error = ''
 
     const  onLocalStorage = async () => {
     localStorage.getItem("city") ? 
@@ -29,10 +28,12 @@ onMount(async () => {
 const handleSubmit = async (city) => {
  weather = await getWeatherFrom(city)
  if(weather.message) {
-    error = 'Ups... That place isn´t in the Weather API, try another!'
+    alert('Ups... That place isn´t in the Weather API, try another!')
+    city = ''
     weather = await getWeatherFrom()
  }
  localStorage.setItem("city", JSON.stringify(city));
+    city = ''
 }
 
 </script>
